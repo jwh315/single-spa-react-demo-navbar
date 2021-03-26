@@ -3,14 +3,14 @@ import { Link, navigate } from "@reach/router";
 // @ts-ignore
 import { IUser, IRootProps } from "@cd/models";
 
-export const links = [
+const links = [
   {
     name: "Home",
     href: "/dashboard",
   },
   {
-    name: "Test",
-    href: "/test",
+    name: "Contacts",
+    href: "/contacts",
   },
 ];
 
@@ -27,7 +27,7 @@ const Root = (props: IRootProps) => {
     </Link>
   ));
 
-  const navigation = Object.keys(user).length ? (
+  const navigation = (
     <div className="h-16 flex items-center justify-between px-6 bg-primary text-white">
       <div className="flex items-center justify-between">{tabs}</div>
       <div className="flex items-center justify-between">
@@ -38,7 +38,7 @@ const Root = (props: IRootProps) => {
         </Link>
       </div>
     </div>
-  ) : null;
+  );
 
   return navigation;
 };
