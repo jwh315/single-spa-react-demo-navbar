@@ -17,7 +17,7 @@ const links = [
 const Root = (props: IRootProps) => {
   const [user, setUser] = useState(props.user);
 
-  props.subscribe("USER_DATA_EVENT", (msg, data) => {
+  props.eventer.subscribe("USER_DATA_EVENT", (msg, data) => {
     setUser(data);
   });
 
